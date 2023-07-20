@@ -2,6 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+const Header = () => {
+  return (
+    <>
+      <Cabecalho>
+        <NavLink to="/" end>
+          Dev
+        </NavLink>
+        <NavLink to="curriculumVitae" end>
+          Curriculum Vitae
+        </NavLink>
+      </Cabecalho>
+    </>
+  );
+};
+
 const Cabecalho = styled.ul`
   display: flex;
   color: #5e5e5e;
@@ -25,24 +40,9 @@ const Cabecalho = styled.ul`
   }
 
   .active {
-    color: #f1f1f1;
+    color: pink;
     transition: 0.2s;
   }
 `;
-
-const Header = () => {
-  return (
-    <>
-      <Cabecalho>
-        <NavLink to="/" end>
-          Dev
-        </NavLink>
-        <NavLink to="contato" end>
-          Contato
-        </NavLink>
-      </Cabecalho>
-    </>
-  );
-};
 
 export default Header;

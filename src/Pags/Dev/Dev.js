@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Home from './Dev/Home';
-import Projetos from './Dev/Projetos';
+import Home from './compDev/Home';
+import Projetos from './compDev/Projetos';
 import Seta from '../../imgs/setaDown.png';
 
 const Dev = () => {
@@ -31,10 +31,11 @@ const Dev = () => {
 
 const Estrutura = styled.main`
   display: grid;
-  max-width: max-content;
+  max-width: 900px;
   margin: 0 auto;
   color: black;
   position: relative;
+  padding-top: 3rem;
 `;
 
 const Btn = styled.div`

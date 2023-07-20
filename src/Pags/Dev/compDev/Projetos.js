@@ -1,66 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Estrutura = styled.div`
-  display: flex;
-  gap: 0px;
-  position: relative;
-  padding: 4rem 2rem 7rem 2rem;
-  transition: 0.3s;
-  transition: 0.5s;
-
-  div:first-child {
-    margin-left: 0px;
-  }
-`;
-
-const Bloco = styled.div`
-  display: grid;
-  align-content: start;
-  height: max-content;
-  width: 300px;
-  margin-left: -190px;
-  border-radius: 2rem;
-  background-color: initial;
-  transition: 0.5s;
-  transform: translateX(0px);
-  padding: 1rem 2.5rem;
-  cursor: pointer;
-  position: relative;
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-  }
-  picture {
-    height: 140px;
-    width: 100%;
-    background-color: transparent;
-    border-radius: 1rem;
-  }
-  div {
-    display: flex;
-    margin: 20px auto 0 auto;
-    list-style: none;
-    gap: 1rem;
-    font-weight: bold;
-  }
-
-  div li:first-child {
-    color: '#FA9566';
-  }
-  div li:last-child {
-    color: '#FFEA59';
-  }
-
-  h2 {
-    position: absolute;
-    font-size: 3.5rem;
-    left: 80%;
-    top: 60%;
-  }
-`;
-
 const Projetos = ({ x }) => {
   const elementos = [
     {
@@ -69,17 +9,18 @@ const Projetos = ({ x }) => {
       id: 1,
 
       //content
-      titulo: 'C6 BANK',
+      titulo: 'Sistema de Gestão',
       img: '',
       tecnologias: [
-        { tecs: 'HTML', cor: '#FA9566' },
-        { tecs: 'CSS', cor: '#68D2FF' },
-        { tecs: 'JS', cor: '#FFEA59' },
+        { tecs: '', cor: '#FA9566' },
+        { tecs: 'React', cor: '#68D2FF' },
+        { tecs: 'Firebase', cor: '#FFEA59' },
       ],
       texto: 'texto',
 
       //colors
       textoCor: '#FFFED5',
+      link: 'https://aplicacaowebkv.web.app/',
     },
     {
       background: '#000000',
@@ -98,6 +39,7 @@ const Projetos = ({ x }) => {
 
       //colors
       textoCor: '#FFFED5',
+      link: '',
     },
     {
       background: '#FFFED5',
@@ -116,6 +58,7 @@ const Projetos = ({ x }) => {
 
       //colors
       textoCor: '#000000',
+      link: '',
     },
 
     {
@@ -135,11 +78,13 @@ const Projetos = ({ x }) => {
 
       //colors
       textoCor: '#FFFED5',
+      link: '',
     },
   ];
 
   function mouseEfeitoBg({ target }) {
     if (target.id === 'lista') {
+      console.log(target);
       document.querySelectorAll('[data-id]').forEach((e) => {
         e.style.transform = 'translateX(0px)';
       });
@@ -202,6 +147,7 @@ const Projetos = ({ x }) => {
             tecnologias,
             texto,
             textoCor,
+            link,
           }) => (
             <Bloco
               key={background}
@@ -212,6 +158,7 @@ const Projetos = ({ x }) => {
               }}
               onMouseOver={mouseEfeito}
               data-id={id}
+              href={link}
             >
               <h1 style={{ color: textoCor }}>{titulo}</h1>
               <picture>
@@ -231,5 +178,64 @@ const Projetos = ({ x }) => {
     </>
   );
 };
+
+const Estrutura = styled.div`
+  display: flex;
+  position: relative;
+  padding: 4rem 2rem 7rem 2rem;
+  transition: 0.5s;
+  max-width: 700px;
+  margin: 0 auto 0 160px;
+
+  div:first-child {
+    margin-left: 50px;
+  }
+`;
+const Bloco = styled.a`
+  display: grid;
+  align-content: start;
+  height: max-content;
+  width: 300px;
+  margin-left: -190px;
+  border-radius: 2rem;
+  background-color: initial;
+  transition: 0.5s;
+  transform: translateX(0px);
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  picture {
+    height: 140px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 1rem;
+  }
+  div {
+    display: flex;
+    margin: 20px auto 0 auto;
+    list-style: none;
+    font-weight: bold;
+  }
+
+  div li:first-child {
+    color: '#FA9566';
+  }
+  div li:last-child {
+    color: '#FFEA59';
+  }
+
+  h2 {
+    position: absolute;
+    font-size: 3.5rem;
+    left: 80%;
+    top: 60%;
+  }
+`;
 
 export default Projetos;

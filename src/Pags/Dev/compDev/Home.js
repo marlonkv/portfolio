@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Marlon from './Home/Marlon';
-import Sobre from './Home/Sobre';
+import Marlon from './compHome/Marlon';
+import Sobre from './compHome/Sobre';
 
 const Corpo = () => {
   const [home, setHome] = React.useState(true);
@@ -12,7 +12,7 @@ const Corpo = () => {
     const { parentElement } = target;
 
     if (home) {
-      parentElement.style.transform = 'translateX(300px)';
+      parentElement.style.transform = 'translateX(130px)';
 
       setTimeout(() => {
         parentElement.style.opacity = '0';
@@ -23,7 +23,7 @@ const Corpo = () => {
       }, 50);
     } else {
       parentElement.parentElement.style.transform = 'translateX(-300px)';
-      parentElement.parentElement.style.transition = '.4s';
+      parentElement.parentElement.style.transition = '.5s';
 
       setTimeout(() => {
         parentElement.parentElement.style.opacity = '0';
