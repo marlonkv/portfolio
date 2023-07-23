@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import whatsIcon from '../../../../midia/whats.png';
 import voltatIcon from '../../../../midia/arrow.svg';
 
 const Sobre = ({ state, clickFunction }) => {
@@ -11,76 +10,151 @@ const Sobre = ({ state, clickFunction }) => {
           <img src={voltatIcon} alt="Voltar" height="35px" />
         </BtnVoltar>
 
-        <Eu>
-          <ImagemProfile>
-            <img src="#" alt="" />
-          </ImagemProfile>
-          <Detalhes>
-            <ul>
-              <li>
-                <h1>Marlon Silva</h1>
-              </li>
-              <li>
-                <span>Idade</span>
-                <p>19 anos</p>
-              </li>
-              <li>
-                <span>Localização</span>
-                <p>Paraty - RJ</p>
-              </li>
-            </ul>
-          </Detalhes>
-        </Eu>
+        <div style={{ display: 'grid', gap: '3rem' }}>
+          <div>
+            <Eu>
+              <ImagemProfile>
+                <img src="#" alt="" />
+              </ImagemProfile>
+              <Detalhes>
+                <ul>
+                  <li>
+                    <h1>Marlon Silva dos Remédios</h1>
+                  </li>
+                  <li>
+                    <span>Idade</span>
+                    <p>19 anos</p>
+                  </li>
+                  <li>
+                    <span>Localização</span>
+                    <p>Paraty - RJ</p>
+                  </li>
+                </ul>
+              </Detalhes>
+            </Eu>
+            <Texto>
+              Olá, me chamo Marlon, sou um desenvolvedor web front-end em busca
+              de minha primeira oportunidade. Tenho paixão por programação,
+              estou pronto para projetos desafiadores!
+            </Texto>
+          </div>
+
+          <Texto>
+            <h2>Experiência</h2>
+            <p>
+              Até o momento, nunca trabalhei como Desenvolvedor, atualmente
+              estou empregado em uma empresa de medicina ocupacional no setor
+              técnico/administrativo. Sou responsabilizado por garantir o
+              cumprimento das obrigações legais sobre SST.
+            </p>
+          </Texto>
+        </div>
 
         <Texto>
-          <h2>Sobre mim</h2>
-          Olá, me chamo Marlon, sou desenvolvedor web front-end e estou em busca
-          por minha primeira oportunidade. Tenho uma enorme paixão por
-          programação e busco constantemente por conhecimentos e habilidades
-          atualizadas, e estou pronto para trabalhar em projetos desafiadores.
+          <Skills>
+            <div>
+              <h3>Linguagens</h3>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Framework JS</h3>
+              <ul>
+                <li>React</li>
+              </ul>
+            </div>
+            <div>
+              <h3>SCM</h3>
+              <ul>
+                <li>GIT</li>
+              </ul>
+            </div>
+          </Skills>
+          <Formacao>
+            <h3>Ensino Superior</h3>
+            <p>
+              Análise e Desenvolvimento
+              <br /> de Sistemas
+            </p>
+            <span>Cursando</span>
+          </Formacao>
         </Texto>
-
-        <Contato>
-          <span>
-            <p>marlonsilvavvv@gmail.com</p>
-          </span>
-          <span>
-            <img src={whatsIcon} alt="whats" height="22px" />
-            <p>{'+55 (24) 99905-0925'}</p>
-          </span>
-        </Contato>
       </div>
     </SobreMim>
   );
 };
 
-const Contato = styled.div`
-  padding: 0.5rem 0.9rem;
-  border-radius: 0.7rem;
-  font-size: 0.9rem;
-  display: grid;
-  gap: 0.3rem;
-  margin-top: 1.4rem;
-  text-align: center;
-  font-weight: bold;
+const Formacao = styled.div`
+  margin-top: 4rem;
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  background-color: gainsboro;
 
-  span {
-    display: flex;
+  &::before {
+    content: 'FORMAÇÃO';
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: gainsboro;
+    top: 350px;
+    left: 10px;
+  }
+`;
+const Skills = styled.div`
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  background-color: gainsboro;
+
+  ul {
+    display: grid;
     gap: 0.2rem;
-    align-items: center;
-    padding: 0px;
+    margin-top: 0.3rem;
+
+    li:before {
+      content: '';
+      height: 5px;
+      width: 10px;
+      background-color: gray;
+      position: relative;
+      display: inline-block;
+      top: -2px;
+      left: -8px;
+      border-radius: 2px;
+    }
+  }
+
+  &::before {
+    content: 'SKILLS';
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: gainsboro;
+    top: -35px;
+    left: 10px;
   }
 `;
 const Texto = styled.p`
   position: relative;
-  width: 65ch;
+  width: auto;
+  ul {
+    list-style: none;
+  }
 `;
 const Eu = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
+  gap: 1rem;
 `;
 const Detalhes = styled.div`
   ul {
+    padding: 0px;
     list-style: none;
     display: grid;
     gap: 0.2rem;
@@ -97,11 +171,10 @@ const Detalhes = styled.div`
   }
 `;
 const ImagemProfile = styled.div`
-  height: 155px;
-  width: 155px;
+  height: 140px;
+  width: 140px;
   background-color: #bfbfbf;
-  border-radius: 8rem;
-  margin-top: 20px;
+  border-radius: 10rem;
 `;
 const BtnVoltar = styled.button`
   position: absolute;
@@ -117,20 +190,20 @@ const BtnVoltar = styled.button`
   }
 `;
 const SobreMim = styled.div`
-  height: 77vh;
   width: 100%;
   margin-left: 3rem;
   position: relative;
   transition: 0.5s;
   animation: anima 0.4s;
+  padding-top: 3rem;
 
-  & > div:last-child {
-    height: 400px;
-    margin: 40px auto 0 auto;
+  & > div {
+    margin: 0px auto 0 auto;
     display: grid;
-    gap: 1rem;
     justify-items: center;
-    padding: 2.8rem 2rem;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    place-items: center;
   }
 
   @keyframes anima {

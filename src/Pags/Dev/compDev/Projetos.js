@@ -182,7 +182,7 @@ const Projetos = ({ x }) => {
 const Estrutura = styled.div`
   display: flex;
   position: relative;
-  padding: 4rem 2rem 7rem 2rem;
+  padding: 5.1rem 2rem 7rem 2rem;
   transition: 0.5s;
   max-width: 700px;
   margin: 0 auto 0 160px;
