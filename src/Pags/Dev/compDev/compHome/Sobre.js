@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import voltatIcon from '../../../../midia/arrow.svg';
+import imgProfile from '../../../../midia/imgProfile.jpeg';
 
 const Sobre = ({ state, clickFunction }) => {
   return (
@@ -11,10 +12,10 @@ const Sobre = ({ state, clickFunction }) => {
         </BtnVoltar>
 
         <div style={{ display: 'grid', gap: '3rem' }}>
-          <div>
+          <div style={{ display: 'grid', gap: '1.3rem' }}>
             <Eu>
               <ImagemProfile>
-                <img src="#" alt="" />
+                <img src={imgProfile} alt="" />
               </ImagemProfile>
               <Detalhes>
                 <ul>
@@ -33,9 +34,9 @@ const Sobre = ({ state, clickFunction }) => {
               </Detalhes>
             </Eu>
             <Texto>
-              Olá, me chamo Marlon, sou um desenvolvedor web front-end em busca
-              de minha primeira oportunidade. Tenho paixão por programação,
-              estou pronto para projetos desafiadores!
+              Olá, me chamo Marlon, sou um desenvolvedor web front-end. Tenho
+              uma grande paixão por programação, estou pronto para projetos
+              desafiadores!
             </Texto>
           </div>
 
@@ -44,8 +45,7 @@ const Sobre = ({ state, clickFunction }) => {
             <p>
               Até o momento, nunca trabalhei como Desenvolvedor, atualmente
               estou empregado em uma empresa de medicina ocupacional no setor
-              técnico/administrativo. Sou responsabilizado por garantir o
-              cumprimento das obrigações legais sobre SST.
+              técnico/administrativo.
             </p>
           </Texto>
         </div>
@@ -171,10 +171,18 @@ const Detalhes = styled.div`
   }
 `;
 const ImagemProfile = styled.div`
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 10rem;
   height: 140px;
   width: 140px;
-  background-color: #bfbfbf;
-  border-radius: 10rem;
+
+  img {
+    height: 140px;
+    width: 140px;
+    background-color: #bfbfbf;
+    border-radius: 10rem;
+    object-fit: cover;
+  }
 `;
 const BtnVoltar = styled.button`
   position: absolute;

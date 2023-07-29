@@ -12,8 +12,8 @@ const Projetos = ({ x }) => {
       titulo: 'Sistema de Gestão',
       img: '',
       tecnologias: [
-        { tecs: '', cor: '#FA9566' },
-        { tecs: 'React', cor: '#68D2FF' },
+        { tecs: 'React', cor: '#FA9566' },
+        { tecs: 'TypeScript', cor: '#68D2FF' },
         { tecs: 'Firebase', cor: '#FFEA59' },
       ],
       texto: 'texto',
@@ -161,15 +161,15 @@ const Projetos = ({ x }) => {
               href={link}
             >
               <h1 style={{ color: textoCor }}>{titulo}</h1>
-              <picture>
-                <img src={{ img }} alt="" />
-              </picture>
-              <div>
+
+              <div style={{ display: 'grid', gap: '.5rem' }}>
                 {tecnologias.map(({ tecs, cor }) => (
                   <li style={{ color: cor }}>{tecs}</li>
                 ))}
               </div>
+
               <p style={{ color: textoCor }}>{texto}</p>
+
               <h2 style={{ color: textoCor }}>{id}</h2>
             </Bloco>
           ),
@@ -193,7 +193,7 @@ const Estrutura = styled.div`
 `;
 const Bloco = styled.a`
   display: grid;
-  align-content: start;
+  align-items: start;
   height: max-content;
   width: 300px;
   margin-left: -190px;
@@ -207,7 +207,7 @@ const Bloco = styled.a`
   text-decoration: none;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 800;
   }
   picture {
@@ -231,10 +231,8 @@ const Bloco = styled.a`
   }
 
   h2 {
-    position: absolute;
     font-size: 3.5rem;
-    left: 80%;
-    top: 60%;
+    text-align: right;
   }
 `;
 
