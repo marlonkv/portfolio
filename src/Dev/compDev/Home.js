@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Marlon from './compHome/Marlon';
 import Sobre from './compHome/Sobre';
-import WhatsIcon from '../../../midia/whatsapp-35.svg';
+import WhatsIcon from '../../midia/whatsapp-35.svg';
 import Dec from './compHome/Dec';
 
 const Corpo = () => {
@@ -45,19 +45,19 @@ const Corpo = () => {
   return (
     <>
       <div style={{ position: 'relative' }}>
-        <div style={{ height: '82vh' }}>
+        <div style={{ height: '80vh' }}>
           <Pag clickFunction={funcao} />
         </div>
         <Base>
-          <Dec estado={estadoDec} />
+          <DecEstatico></DecEstatico>
           <Contatos>
             <li>
-              <a href="http:/google.com">
+              <a href="http:/google.com" target="_blank">
                 <img src={WhatsIcon} alt="whats" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/marlonkv">
+              <a href="https://github.com/marlonkv" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -69,7 +69,7 @@ const Corpo = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/marlonkv/">
+              <a href="https://www.instagram.com/marlonkv/" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1000 1000"
@@ -81,7 +81,10 @@ const Corpo = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/marlon-silva-6031b5242/">
+              <a
+                href="https://www.linkedin.com/in/marlon-silva-6031b5242/"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -99,17 +102,40 @@ const Corpo = () => {
   );
 };
 
+const DecEstatico = styled.span`
+  width: 80px;
+  height: 5px;
+  background-color: black;
+`;
 const Contatos = styled.ul`
   list-style: none;
   padding: 0px;
   display: flex;
-  gap: 25px;
+  gap: 11px;
+  height: 50px;
+
+  li {
+    transition: 0.2s;
+    padding: 0.6rem 0.6rem;
+    border-radius: 2rem;
+
+    &:first-child {
+      padding: 0.4rem 0.4rem 2.2rem 0.4rem;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.07);
+      transition: 0.2s;
+    }
+  }
 `;
 const Base = styled.div`
   display: flex;
   align-content: center;
+  align-items: center;
   position: relative;
   justify-content: space-between;
+  height: 50px;
+  max-width: 890px;
 `;
 
 export default Corpo;

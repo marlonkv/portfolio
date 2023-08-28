@@ -1,5 +1,5 @@
 import React from 'react';
-import Dev from './Pags/Dev/Dev';
+import Dev from './Dev/Dev';
 
 function App() {
   return (

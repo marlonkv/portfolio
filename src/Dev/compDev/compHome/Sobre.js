@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import voltatIcon from '../../../../midia/arrow.svg';
-import imgProfile from '../../../../midia/imgProfile.jpeg';
+import voltatIcon from '../../../midia/arrow.svg';
+import imgProfile from '../../../midia/imgProfile.jpeg';
 
 const Sobre = ({ state, clickFunction }) => {
   return (
@@ -50,7 +50,7 @@ const Sobre = ({ state, clickFunction }) => {
           </Texto>
         </div>
 
-        <Texto>
+        <Texto style={{ display: 'grid', gap: '.8rem' }}>
           <Skills>
             <div>
               <h3>Linguagens</h3>
@@ -62,7 +62,7 @@ const Sobre = ({ state, clickFunction }) => {
               </ul>
             </div>
             <div>
-              <h3>Framework JS</h3>
+              <h3>Biblioteca JS</h3>
               <ul>
                 <li>React</li>
               </ul>
@@ -89,54 +89,32 @@ const Sobre = ({ state, clickFunction }) => {
 };
 
 const Formacao = styled.div`
-  margin-top: 4rem;
   padding: 1.5rem 3rem;
   border-radius: 1rem;
-  background-color: gainsboro;
-
-  &::before {
-    content: 'FORMAÇÃO';
-    position: absolute;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: gainsboro;
-    top: 350px;
-    left: 10px;
-  }
+  background-color: rgba(0, 0, 0, 0.09);
 `;
 const Skills = styled.div`
   display: grid;
   gap: 0.7rem;
   padding: 1.5rem 3rem;
   border-radius: 1rem;
-  background-color: gainsboro;
+  background-color: rgba(0, 0, 0, 0.09);
 
   ul {
     display: grid;
-    gap: 0.2rem;
+    gap: 0.4rem;
     margin-top: 0.3rem;
 
-    li:before {
-      content: '';
-      height: 5px;
-      width: 10px;
-      background-color: gray;
-      position: relative;
-      display: inline-block;
-      top: -2px;
-      left: -8px;
-      border-radius: 2px;
-    }
-  }
-
-  &::before {
-    content: 'SKILLS';
-    position: absolute;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: gainsboro;
-    top: -35px;
-    left: 10px;
+    li {
+      padding: 0.3rem 1.2rem;
+      border-radius: 2rem;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      font-size: 0.8rem;
+      width: max-content;
+      box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
+    } 
   }
 `;
 const Texto = styled.p`
@@ -188,7 +166,7 @@ const BtnVoltar = styled.button`
   position: absolute;
   background: none;
   border: none;
-  left: -120px;
+  left: -70px;
   top: 0px;
   cursor: pointer;
 
@@ -203,7 +181,7 @@ const SobreMim = styled.div`
   position: relative;
   transition: 0.5s;
   animation: anima 0.4s;
-  padding-top: 3rem;
+  padding: 2rem 0;
 
   & > div {
     margin: 0px auto 0 auto;

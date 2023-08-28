@@ -50,7 +50,7 @@ const Dec1 = styled.span`
   border-top: 6px solid transparent;
   border-right: 6px solid transparent;
   transform: rotate(-42deg);
-  transition: 0.3s;
+  transition: 0.4s;
 `;
 const Dec2 = styled.span`
   height: 20px;
@@ -65,7 +65,7 @@ const Dec2 = styled.span`
   position: relative;
   left: -6px;
   top: 3px;
-  transition: 0.3s;
+  transition: 0.4s;
 `;
 const Dec3 = styled.span`
   height: 20px;
