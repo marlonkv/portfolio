@@ -20,7 +20,7 @@ const Dev = () => {
 
 const Estrutura = styled.main`
   display: grid;
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
   color: black;
   position: relative;

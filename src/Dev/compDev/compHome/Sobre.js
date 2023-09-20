@@ -76,11 +76,7 @@ const Sobre = ({ state, clickFunction }) => {
           </Skills>
           <Formacao>
             <h3>Ensino Superior</h3>
-            <p>
-              Análise e Desenvolvimento
-              <br /> de Sistemas
-            </p>
-            <span>Cursando</span>
+            <p>Análise e Desenvolvimento de Sistemas</p>
           </Formacao>
         </Texto>
       </div>
@@ -89,9 +85,42 @@ const Sobre = ({ state, clickFunction }) => {
 };
 
 const Formacao = styled.div`
-  padding: 1.5rem 3rem;
+  padding: 1.3rem 2rem;
   border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.09);
+  position: relative;
+
+  h3 {
+    margin-bottom: 0.15rem;
+  }
+
+  h3::before {
+    content: 'Cursando';
+    position: absolute;
+    font-size: 0.7rem;
+    color: gray;
+    top: 26px;
+    left: 182px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.17);
+    padding: 0.01rem 0.3rem;
+    border-radius: 0.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    max-width: 25ch;
+  }
+  /*   h3::after {
+    content: '';
+    height: 16px;
+    width: 2.7px;
+    background-color: gray;
+    position: absolute;
+    top: 30px;
+    left: 201px;
+  } */
 `;
 const Skills = styled.div`
   display: grid;
@@ -114,7 +143,7 @@ const Skills = styled.div`
       font-size: 0.8rem;
       width: max-content;
       box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
-    } 
+    }
   }
 `;
 const Texto = styled.p`

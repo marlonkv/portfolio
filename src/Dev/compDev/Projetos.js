@@ -28,7 +28,24 @@ const Projetos = ({ x }) => {
       background: '#171717',
       index: 3,
       id: 2,
+      //content
+      titulo: 'iCloud Clone',
+      img: '',
+      tecnologias: [
+        { tecs: 'React', cor: '#FA9566' },
+        { tecs: 'TypeScript', cor: '#68D2FF' },
+        { tecs: 'Firebase', cor: '#FFEA59' },
+      ],
+      texto: 'algum textooooo ooooo ooo ooooooo oooo ooooooo ooooooooooo',
 
+      //colors
+      textoCor: 'white',
+      link: 'https://marlonkv.github.io/iCloudClone/',
+    },
+    {
+      background: '#171717',
+      index: 2,
+      id: 3,
       //content
       titulo: 'SAFE',
       img: '',
@@ -45,25 +62,6 @@ const Projetos = ({ x }) => {
     },
     {
       background: '#171717',
-      index: 2,
-      id: 3,
-
-      //content
-      titulo: 'None',
-      img: '',
-      tecnologias: [
-        { tecs: 'React', cor: '#FA9566' },
-        { tecs: 'TypeScript', cor: '#68D2FF' },
-        { tecs: 'Firebase', cor: '#FFEA59' },
-      ],
-      texto: 'algum textooooo ooooo ooo ooooooo oooo ooooooo ooooooooooo',
-
-      //colors
-      textoCor: 'white',
-      link: '',
-    },
-    {
-      background: '#171717',
       index: 1,
       id: 4,
 
@@ -75,11 +73,11 @@ const Projetos = ({ x }) => {
         { tecs: 'CSS', cor: '#68D2FF' },
         { tecs: 'JavaScript', cor: '#FFEA59' },
       ],
-      texto: 'algum textooooo ooooo ooo ooooooo oooo ooooooo ooooooooooo',
+      texto: 'algum textooooo ooooo ooooooo ooooooooooo',
 
       //colors
       textoCor: '#FFFED5',
-      link: '',
+      link: 'https://marlonkv.github.io/conselhos/',
     },
   ];
 
@@ -226,16 +224,16 @@ const Tecnologias = styled.div`
   flex-wrap: wrap;
 
   li {
+    font-weight: bold;
     padding: 0.3rem 0.7rem;
     border-radius: 2rem;
-    background-color: rgba(45, 212, 191, 0.1);
-    color: #5eead4;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: gray;
     font-size: 0.8rem;
   }
 `;
-
 const Index = styled.h2`
-  width: 13ch;
+  width: 10ch;
   color: gray;
   font-weight: 700;
   font-size: 1.5rem;
@@ -243,7 +241,7 @@ const Index = styled.h2`
   animation: anima 0.1s;
   text-align: right;
   position: absolute;
-  left: 150px;
+  left: 200px;
   top: 25px;
   @keyframes anima {
     0% {
@@ -260,12 +258,13 @@ const Ofuscamento = styled.div`
   transition: 0.3s;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.9rem;
+  gap: 0.6rem;
   color: gainsboro;
 
   h1 {
-    font-size: 1.6rem;
-    font-weight: 100;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
   }
   p {
     font-size: 0.9rem;
@@ -286,6 +285,7 @@ const Bloco = styled.a`
   box-shadow: 1px 1px 20px 1px rgba(255, 255, 255, 0.08);
   background-color: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(22px);
+  max-width: 29ch;
 
   picture {
     height: 140px;

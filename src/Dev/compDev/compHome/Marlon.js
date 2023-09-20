@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from '../../../theme';
 
 const Marlon = ({ clickFunction }) => {
   return (
@@ -54,14 +55,16 @@ const Btn = styled.div`
       left: 0px;
     }
   }
+
+  @media screen and (max-width: ${theme.breakpoints.xl}) {
+    padding: 0.8rem 2.5rem;
+  }
 `;
 const MarlonSilva = styled.div`
   display: flex;
-  gap: 20%;
-  width: 100%;
+  justify-content: space-between;
   font-size: 2.5rem;
   position: relative;
-  height: 77vh;
   align-items: center;
   transition: 0.5s;
   animation: inicio 0.3s;
@@ -96,6 +99,19 @@ const MarlonSilva = styled.div`
 
   p:last-child::after {
     margin-left: -25px;
+  }
+
+  @media screen and (max-width: ${theme.breakpoints.xl}) {
+    justify-content: space-between;
+
+    h1 {
+      font-size: 4.2rem;
+      height: 85px;
+    }
+
+    span {
+      font-size: 1.1rem;
+    }
   }
 `;
 
